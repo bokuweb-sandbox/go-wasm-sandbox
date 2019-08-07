@@ -1,9 +1,7 @@
 .PHONY: all clean serve
 
-all: main.wasm serve
-
-%.wasm: %.go
-	GOOS=js GOARCH=wasm go build -o "$@" "$<"
+build:
+	GOOS=js GOARCH=wasm go build -o "main.wasm" "wasm_main.go"
 
 serve:
 	xdg-open 'http://localhost:5002'
