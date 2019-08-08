@@ -16,7 +16,10 @@
         mod.then(function(instance) {
           go.run(instance);
 
-          const t = new Test();
+          // const buffer = new ArrayBuffer(18);
+          const a = new Uint8Array(20);
+          a[1] = 99;
+          const t = new Test(a);
           console.log(t.buf[0]);
           t.change();
           console.log(t.buf[0]);
